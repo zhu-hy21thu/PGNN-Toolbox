@@ -68,9 +68,9 @@ end
 
 % Define entries used for training and validation
 numberOfValPoints   = round(size(phi,2)*partValData);
-entriesValPoints    = randperm(size(phi,2), numberOfValPoints);
+entriesValPoints    = randperm(size(phi,2), numberOfValPoints); % 数值索引
 entriesTraPoints    = true(1, size(phi,2)); 
-entriesTraPoints(entriesValPoints) = false;
+entriesTraPoints(entriesValPoints) = false; % 布尔索引
 % Define validation and training sets
 phi_val             = phi(:, entriesValPoints);
 output_val          = output(:, entriesValPoints);

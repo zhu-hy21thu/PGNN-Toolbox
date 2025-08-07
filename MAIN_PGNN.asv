@@ -47,12 +47,11 @@ fileName = 'IOData';
 n_a = 5; n_b = 1; n_k = 2;      % Order of the dynamics
 % 神经网络的隐藏层结构
 networkSize         = [16];     % Specify the number of neurons per hidden layer, e.g., [16, 16] gives two 16-neuron layers
-% 输入变换的类型
+% 输入变换的结构
 typeOfTransform     = 1;        % Type of regressor as inputted in the physics-based transform.
 
 % Training settings
-% lambda              = logspace(-2, 1, 5);
-lambda              = 0.06;
+lambda              = logspace(-5, 1, 20);
 lambda_phy          = 1;        % L2 regularize the deviation of the physical parameters w.r.t. physical parameters obtained using physical model, insert a scalar or a column with dimension of physical parameters
 lambda_NN           = 0.1;     % L2 regularize the NN parameters, input a scalar or a column with dimension of the NN params
 gamma_ZN            = 0;        % PINNs regularization

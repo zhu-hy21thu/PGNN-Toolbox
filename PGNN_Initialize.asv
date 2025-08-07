@@ -74,7 +74,7 @@ for ii = 2:1:size(networkSize, 2)
     theta_0(indices) = [Wii; Bii];
 end
 
-% 对输出数据进行逆归一化，从[-1,1]到[min_output,max_output]
+% 对输出数据
 Wl1 = rand(1, networkSize(end))*2-1; 
 Bl1 = rand(1, 1)*2-1;
 %Wl1 = rands(1, networkSize(end));
@@ -101,7 +101,7 @@ if (useInitialization == 1)
     N_phy  = n_params(end);
     N_HL   = n_params(end-2);
     N_E    = size(phi_E,2);
-    
+            
     % Add data fit
     phi_OL = [xi; ones(1, size(xi,2)); phi_PG];
     B = [1/sqrt(N_data)*output'];        
@@ -146,7 +146,6 @@ if (useInitialization == 1)
     end
     
     % Compute the optimized parameter values
-    % 最小二乘！
     theta_OL            = A\B;    
     % Replace output weights with optimized ones
     theta_0(indices)    = theta_OL;

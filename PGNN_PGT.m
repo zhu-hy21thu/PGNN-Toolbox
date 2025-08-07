@@ -29,6 +29,7 @@ if (typeOfTransform == 0)
     phi_phy = phi;
 elseif (typeOfTransform == 1)
     % n_a = 5; n_b = 1; n_k = 2;
+    % 损失了部分信息？
     phi_NN = [0.5*((phi(1,:)-2*phi(3,:)+phi(5,:))/(4*Ts^2) + (phi(2,:)-2*phi(4,:)+phi(6,:))/(4*Ts^2));      % 0.5 (\delta^2 y(t+1) + \delta^2 y(t))
               0.5*((phi(2,:)-phi(4,:))/(2*Ts) + (phi(3,:)-phi(5,:))/(2*Ts));                                % 0.5 (\delta y(t+1) + \delta y(t))
               0.5*(phi(3,:) + phi(4,:));                                                                    % 0.5 (y(t+1) + y(t)) 
